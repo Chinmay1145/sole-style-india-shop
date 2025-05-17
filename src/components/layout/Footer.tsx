@@ -58,9 +58,9 @@ export function Footer() {
             <h4 className="font-medium mb-4">Support</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="#" className="hover:text-accent transition-colors">
-                  Contact Us
-                </a>
+                <Link to="/about" className="hover:text-accent transition-colors">
+                  About Us
+                </Link>
               </li>
               <li>
                 <a href="#" className="hover:text-accent transition-colors">

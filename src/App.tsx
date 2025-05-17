@@ -14,6 +14,7 @@ import Checkout from "./pages/Checkout";
 import Success from "./pages/Success";
 import NotFound from "./pages/NotFound";
 import { useState } from "react";
+import About from "./pages/About";
 
 function App() {
   // Create a client
@@ -34,6 +35,7 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/success" element={<Success />} />
+                <Route path="/about" element={<About />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>
