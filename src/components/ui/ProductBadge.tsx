@@ -1,5 +1,6 @@
 
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 type ProductBadgeProps = {
   text: string;
@@ -13,7 +14,7 @@ export function ProductBadge({
   className,
 }: ProductBadgeProps) {
   const baseClasses =
-    "inline-block text-xs px-2 py-1 rounded-md font-medium uppercase tracking-wide badge-bounce";
+    "inline-block text-xs px-2 py-1 rounded-md font-medium uppercase tracking-wide";
 
   const variants = {
     new: "bg-accent text-accent-foreground",
@@ -23,6 +24,18 @@ export function ProductBadge({
   };
 
   return (
-    <span className={cn(baseClasses, variants[variant], className)}>{text}</span>
+    <motion.span 
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ 
+        type: "spring",
+        stiffness: 500,
+        damping: 15
+      }}
+      whileHover={{ scale: 1.05 }}
+      className={cn(baseClasses, variants[variant], className)}
+    >
+      {text}
+    </motion.span>
   );
 }
